@@ -34,6 +34,7 @@ def main():
         headers={
             "Authorization": f"Bearer {resend_api_key}",
             "Content-Type": "application/json",
+            "User-Agent": "curl/8.7.1",
         },
         method="POST",
     )
