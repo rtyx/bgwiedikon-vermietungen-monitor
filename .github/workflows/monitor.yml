@@ -64,10 +64,7 @@ jobs:
       - name: Send email notification
         if: steps.monitor.outputs.changed == 'true'
         env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: rafaeltoledanoillan@gmail.com
           EMAIL_SUBJECT: Website change detected on bgwiedikon.ch/vermietungen

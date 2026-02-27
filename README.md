@@ -20,11 +20,23 @@ First run creates a baseline and does **not** send an email.
 
 ## Required GitHub Secrets
 Set these repository secrets:
-- `SMTP_HOST`
-- `SMTP_PORT` (for example `587` or `465`)
-- `SMTP_USERNAME`
-- `SMTP_PASSWORD`
+- `RESEND_API_KEY`
 - `EMAIL_FROM` (sender address)
+
+## Resend API test
+Replace `re_xxxxxxxxx` with your real Resend API key, then run:
+
+```bash
+curl -X POST 'https://api.resend.com/emails' \
+  -H 'Authorization: Bearer re_xxxxxxxxx' \
+  -H 'Content-Type: application/json' \
+  -d $'{
+    "from": "onboarding@resend.dev",
+    "to": "rafaeltoledanoillan@gmail.com",
+    "subject": "Hello World",
+    "html": "<p>Congrats on sending your <strong>first email</strong>!</p>"
+  }'
+```
 
 ## Schedule
 The workflow runs hourly and can also be triggered manually (`workflow_dispatch`).

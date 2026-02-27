@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+import json
 import os
-import smtplib
-import ssl
-from email.message import EmailMessage
+import urllib.error
+import urllib.request
 
 
 def required_env(name):
@@ -13,10 +13,7 @@ def required_env(name):
 
 
 def main():
-    smtp_host = required_env("SMTP_HOST")
-    smtp_port = int(required_env("SMTP_PORT"))
-    smtp_username = required_env("SMTP_USERNAME")
-    smtp_password = required_env("SMTP_PASSWORD")
+    resend_api_key = required_env("RESEND_API_KEY")
     email_from = required_env("EMAIL_FROM")
     email_to = required_env("EMAIL_TO")
     subject = os.getenv("EMAIL_SUBJECT", "Website change detected: bgwiedikon.ch/vermietungen")
@@ -25,26 +22,30 @@ def main():
     with open(body_file, "r", encoding="utf-8") as f:
         body = f.read()
 
-    msg = EmailMessage()
-    msg["From"] = email_from
-    msg["To"] = email_to
-    msg["Subject"] = subject
-    msg.set_content(body)
+    payload = {
+        "from": email_from,
+        "to": [email_to],
+        "subject": subject,
+        "html": f"<pre>{body}</pre>",
+    }
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {resend_api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
 
-    if smtp_port == 465:
-        context = ssl.create_default_context()
-        with smtplib.SMTP_SSL(smtp_host, smtp_port, context=context, timeout=30) as server:
-            server.login(smtp_username, smtp_password)
-            server.send_message(msg)
-    else:
-        with smtplib.SMTP(smtp_host, smtp_port, timeout=30) as server:
-            server.ehlo()
-            server.starttls(context=ssl.create_default_context())
-            server.ehlo()
-            server.login(smtp_username, smtp_password)
-            server.send_message(msg)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            resp_body = resp.read().decode("utf-8")
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Resend API request failed: {e.code} {e.reason} - {error_body}") from e
 
-    print("Notification email sent.")
+    print(f"Notification email sent via Resend. Response: {resp_body}")
 
 
 if __name__ == "__main__":
