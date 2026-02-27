@@ -1,5 +1,113 @@
 {
-  "hash": null,
-  "updated_at": null,
-  "payload": null
+  "hash": "488b59c4160542924c533e8d425972a5d5b368d55fd98bf76aa907d1387458e0",
+  "updated_at": "2026-02-27T14:50:56.700443+00:00",
+  "payload": {
+    "title": "Vermietungen",
+    "slug": "vermietungen",
+    "intro": "In diesem Abschnitt finden Sie alles zur Vermietung von Wohnungen und anderen Objekten.",
+    "introSmall": null,
+    "accordionSection": [
+      {
+        "type": "title",
+        "title": "Neuvermietungen"
+      },
+      {
+        "type": "text",
+        "text": "<p dir=\"ltr\"><strong>Wir haben sehr viele Bewerbungen erhalten und machen momentan wieder eine Pause. Wir werden hier informieren, sobald wir wieder neue Bewerbungen in den Pool aufnehmen.</strong></p>\n<p dir=\"ltr\"><strong>Achtung: Wir führen keine Korrespondenz über Vermietungen. Wir werden Interessierte kontaktieren, wenn wir sie zu einer Besichtigung einladen wollen.</strong><br /></p>\n<p dir=\"ltr\"><strong>Bitte Bewerbungen grundsätzlich NICHT eingeschrieben schicken.<br /></strong></p>\n<p dir=\"ltr\">Die Auswahl neuer Mieter*innen ist uns ein zentrales Anliegen, denn Neumieter*innen sind neue Genossenschaftsmitglieder und definieren die Zukunft unserer Genossenschaft mit.<br /></p>\n<p dir=\"ltr\">Aus diesem Grund und zu diesem Zweck verfügen wir über eine partizipative Vermietungskommission. Sie besteht aus zwei Vorstandsmitgliedern und – in bei jeder Vermietung wechselndem Turnus – aus einem “normalen” Genossenschaftsmitglied.<br /></p>\n<p dir=\"ltr\">Wir führen keine Warteliste, sondern einen Interessent*innen-Pool. Aus diesem Pool wählt die Vermietungskommision für jede frei werdende Wohnung drei bis vier Bewerbungen aus.<br /></p>\n<p dir=\"ltr\">Die ausgewählten Interessent*innen werden zu einer Wohnungsbesichtigung eingeladen. Mitzubringen sind Betreibungsregisterauszüge und aktuelle Steuerrechnungen.<br /></p>\n<p dir=\"ltr\">Anschliessend fällt die Vermietungskommission einen Vorentscheid, der vom Vorstand genehmigt werden muss.<br /></p>",
+        "nrCols": false
+      },
+      {
+        "type": "title",
+        "title": "Interne Wechsel"
+      },
+      {
+        "type": "text",
+        "text": "<p>Für interne Bewerbungen um Wohnungswechsel ist neu auch zwingend ein Formular auszufüllen. Dieses kann bei Malek Ossi bezogen werden.<br /></p>",
+        "nrCols": false
+      },
+      {
+        "type": "title",
+        "title": "Gemeinschaftsräume"
+      },
+      {
+        "type": "text",
+        "text": "<p>Der Gemeinschaftsraum an der Goldbrunnenstrasse 162 kann für interne und externe Veranstaltungen gemietet werden. Details finden sich <a href=\"http://www.bgwiedikon.ch/gemeinschaftsraum-goldsaum\">hier</a>.</p>\n<p>Der Gemeinschaftsraum an der Steinstrasse 26 kann für interne Zwecke und Veranstaltungen gemietet werden. Details finden sich <a href=\"http://www.bgwiedikon.ch/gemeinschaftsraum-steinau\">hier</a>.</p>",
+        "nrCols": false
+      },
+      {
+        "type": "title",
+        "title": "Untermiete"
+      },
+      {
+        "type": "text",
+        "text": "<p>Untermiete ist grundsätzlich erlaubt, muss aber <a href=\"https://admin.bgwiedikon.ch/assets/uploads/Anmeldung_Untermiete.pdf\">per Formular</a> angemeldet und bewilligt werden. Es gelten die folgenden Grundsätze:</p>\n<p>- Es darf durch die Untermiete kein Gewinn erzielt werden.</p>\n<p>- Die Untervermietung einer ganzen Wohnung darf nicht länger als ein Jahr dauern.</p>",
+        "nrCols": false
+      },
+      {
+        "type": "title",
+        "title": "Dokumente"
+      },
+      {
+        "type": "documents",
+        "documents": [
+          {
+            "title": "Statuten",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/2013_Statuten.pdf",
+            "extension": "pdf",
+            "size": "167499",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Vermietungsreglement",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/2014_Vermietungsreglement_BGW.pdf",
+            "extension": "pdf",
+            "size": "148988",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Jahresbericht 2020",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/2020_Jahresbericht_BGW.pdf",
+            "extension": "pdf",
+            "size": "4405666",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Reglement Solidaritaetsfond BGW",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/20220209-Reglement-Solidaritaetsfond-BGW.pdf",
+            "extension": "pdf",
+            "size": "131676",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Jahresbericht 2022",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/202305_Jahresbericht_2022_einseitig.pdf",
+            "extension": "pdf",
+            "size": "4780104",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Anmeldung Untermiete",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/Anmeldung_Untermiete.pdf",
+            "extension": "pdf",
+            "size": "85422",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Hausordnung",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/Hausordnung.pdf",
+            "extension": "pdf",
+            "size": "75869",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Jahresbericht 2021",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/Jahresbericht-2021.pdf",
+            "extension": "pdf",
+            "size": "4784899",
+            "mimeType": "application/pdf"
+          }
+        ]
+      }
+    ]
+  }
 }
