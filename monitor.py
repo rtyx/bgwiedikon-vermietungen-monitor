@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -12,6 +13,9 @@ API_URL = "https://admin.bgwiedikon.ch/api"
 STATE_FILE = "state.json"
 DIFF_FILE = "last_change.diff"
 EMAIL_BODY_FILE = "email_body.txt"
+HTTP_TIMEOUT_SECONDS = 30
+HTTP_MAX_ATTEMPTS = 3
+RETRYABLE_HTTP_STATUS_CODES = {408, 429, 500, 502, 503, 504}
 
 QUERY = """
 query {
@@ -57,17 +61,78 @@ query {
 """.strip()
 
 
-def http_post_json(url, payload):
+class MonitorRequestError(Exception):
+    def __init__(self, message, retryable):
+        super().__init__(message)
+        self.retryable = retryable
+
+
+def summarize_body(body, limit=240):
+    compact = " ".join(body.split())
+    if len(compact) <= limit:
+        return compact
+    return compact[: limit - 3] + "..."
+
+
+def http_post_json(url, payload, attempts=HTTP_MAX_ATTEMPTS):
     data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        url,
-        data=data,
-        headers={"content-type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        body = resp.read().decode("utf-8")
-    return json.loads(body)
+    last_error = None
+
+    for attempt in range(1, attempts + 1):
+        try:
+            req = urllib.request.Request(
+                url,
+                data=data,
+                headers={
+                    "accept": "application/json",
+                    "content-type": "application/json",
+                },
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT_SECONDS) as resp:
+                status = getattr(resp, "status", None)
+                content_type = resp.headers.get("content-type", "unknown")
+                body = resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")
+            content_type = e.headers.get("content-type", "unknown")
+            last_error = MonitorRequestError(
+                (
+                    f"HTTP {e.code} from {url} "
+                    f"(content-type={content_type}, body={summarize_body(body)!r})"
+                ),
+                retryable=e.code in RETRYABLE_HTTP_STATUS_CODES,
+            )
+        except urllib.error.URLError as e:
+            last_error = MonitorRequestError(
+                f"request failed: {e}",
+                retryable=True,
+            )
+        else:
+            if not body.strip():
+                last_error = MonitorRequestError(
+                    f"empty response body (status={status}, content-type={content_type})",
+                    retryable=True,
+                )
+            else:
+                try:
+                    return json.loads(body)
+                except json.JSONDecodeError:
+                    last_error = MonitorRequestError(
+                        (
+                            f"invalid JSON response from {url} "
+                            f"(status={status}, content-type={content_type}, "
+                            f"body={summarize_body(body)!r})"
+                        ),
+                        retryable=True,
+                    )
+
+        if not last_error.retryable or attempt == attempts:
+            raise last_error
+
+        time.sleep(attempt)
+
+    raise last_error
 
 
 def canonicalize(entry):
@@ -172,8 +237,8 @@ def write_email_body(old_hash, new_hash):
 def main():
     try:
         response = http_post_json(API_URL, {"query": QUERY})
-    except urllib.error.URLError as e:
-        print(f"ERROR: request failed: {e}", file=sys.stderr)
+    except MonitorRequestError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
         return 1
 
     errors = response.get("errors")
