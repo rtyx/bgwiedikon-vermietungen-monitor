@@ -1,1 +1,35 @@
-No textual diff available.
+--- previous
++++ current
+@@ -45,16 +45,9 @@
+         {
+           "extension": "pdf",
+           "mimeType": "application/pdf",
+-          "size": "167499",
+-          "title": "Statuten",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/2013_Statuten.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "148988",
++          "size": "50686",
+           "title": "Vermietungsreglement",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/2014_Vermietungsreglement_BGW.pdf"
++          "url": "https://admin.bgwiedikon.ch/assets/uploads/2014-Vermietungsreglement.pdf"
+         },
+         {
+           "extension": "pdf",
+@@ -97,6 +90,13 @@
+           "size": "4784899",
+           "title": "Jahresbericht 2021",
+           "url": "https://admin.bgwiedikon.ch/assets/uploads/Jahresbericht-2021.pdf"
++        },
++        {
++          "extension": "pdf",
++          "mimeType": "application/pdf",
++          "size": "78532",
++          "title": "Statuten",
++          "url": "https://admin.bgwiedikon.ch/assets/uploads/Statuten_2024.pdf"
+         }
+       ],
+       "type": "documents"

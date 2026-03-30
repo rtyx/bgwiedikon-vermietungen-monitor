@@ -1,6 +1,6 @@
 {
-  "hash": "488b59c4160542924c533e8d425972a5d5b368d55fd98bf76aa907d1387458e0",
-  "updated_at": "2026-02-27T14:53:56.842083+00:00",
+  "hash": "0730fc8ba97bd6a33510bde0cff9bf83bef76b9275f8ea3b9b53281453c68e33",
+  "updated_at": "2026-03-30T18:39:45.100114+00:00",
   "payload": {
     "title": "Vermietungen",
     "slug": "vermietungen",
@@ -51,17 +51,10 @@
         "type": "documents",
         "documents": [
           {
-            "title": "Statuten",
-            "url": "https://admin.bgwiedikon.ch/assets/uploads/2013_Statuten.pdf",
-            "extension": "pdf",
-            "size": "167499",
-            "mimeType": "application/pdf"
-          },
-          {
             "title": "Vermietungsreglement",
-            "url": "https://admin.bgwiedikon.ch/assets/uploads/2014_Vermietungsreglement_BGW.pdf",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/2014-Vermietungsreglement.pdf",
             "extension": "pdf",
-            "size": "148988",
+            "size": "50686",
             "mimeType": "application/pdf"
           },
           {
@@ -104,6 +97,13 @@
             "url": "https://admin.bgwiedikon.ch/assets/uploads/Jahresbericht-2021.pdf",
             "extension": "pdf",
             "size": "4784899",
+            "mimeType": "application/pdf"
+          },
+          {
+            "title": "Statuten",
+            "url": "https://admin.bgwiedikon.ch/assets/uploads/Statuten_2024.pdf",
+            "extension": "pdf",
+            "size": "78532",
             "mimeType": "application/pdf"
           }
         ]
