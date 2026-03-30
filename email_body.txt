@@ -1,7 +1,7 @@
 Change detected on https://bgwiedikon.ch/vermietungen
 
-Detected at (UTC): 2026-03-30T18:39:45.100825+00:00
-Old hash: 488b59c4160542924c533e8d425972a5d5b368d55fd98bf76aa907d1387458e0
-New hash: 0730fc8ba97bd6a33510bde0cff9bf83bef76b9275f8ea3b9b53281453c68e33
+Detected at (UTC): 2026-03-30T21:22:28.276608+00:00
+Old hash: 0730fc8ba97bd6a33510bde0cff9bf83bef76b9275f8ea3b9b53281453c68e33
+New hash: 8710d201e60a399b474923e9b045da28b061f873dce901ef3b5e6ed53daa264f
 
 A diff was committed to this repository in last_change.diff.

@@ -1,35 +1,74 @@
 --- previous
 +++ current
-@@ -45,16 +45,9 @@
-         {
-           "extension": "pdf",
-           "mimeType": "application/pdf",
--          "size": "167499",
--          "title": "Statuten",
--          "url": "https://admin.bgwiedikon.ch/assets/uploads/2013_Statuten.pdf"
+@@ -35,71 +35,6 @@
+       "nrCols": false,
+       "text": "<p>Untermiete ist grundsätzlich erlaubt, muss aber <a href=\"https://admin.bgwiedikon.ch/assets/uploads/Anmeldung_Untermiete.pdf\">per Formular</a> angemeldet und bewilligt werden. Es gelten die folgenden Grundsätze:</p>\n<p>- Es darf durch die Untermiete kein Gewinn erzielt werden.</p>\n<p>- Die Untervermietung einer ganzen Wohnung darf nicht länger als ein Jahr dauern.</p>",
+       "type": "text"
+-    },
+-    {
+-      "title": "Dokumente",
+-      "type": "title"
+-    },
+-    {
+-      "documents": [
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "50686",
+-          "title": "Vermietungsreglement",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/2014-Vermietungsreglement.pdf"
 -        },
 -        {
 -          "extension": "pdf",
 -          "mimeType": "application/pdf",
--          "size": "148988",
-+          "size": "50686",
-           "title": "Vermietungsreglement",
--          "url": "https://admin.bgwiedikon.ch/assets/uploads/2014_Vermietungsreglement_BGW.pdf"
-+          "url": "https://admin.bgwiedikon.ch/assets/uploads/2014-Vermietungsreglement.pdf"
-         },
-         {
-           "extension": "pdf",
-@@ -97,6 +90,13 @@
-           "size": "4784899",
-           "title": "Jahresbericht 2021",
-           "url": "https://admin.bgwiedikon.ch/assets/uploads/Jahresbericht-2021.pdf"
-+        },
-+        {
-+          "extension": "pdf",
-+          "mimeType": "application/pdf",
-+          "size": "78532",
-+          "title": "Statuten",
-+          "url": "https://admin.bgwiedikon.ch/assets/uploads/Statuten_2024.pdf"
-         }
-       ],
-       "type": "documents"
+-          "size": "4405666",
+-          "title": "Jahresbericht 2020",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/2020_Jahresbericht_BGW.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "131676",
+-          "title": "Reglement Solidaritaetsfond BGW",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/20220209-Reglement-Solidaritaetsfond-BGW.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "4780104",
+-          "title": "Jahresbericht 2022",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/202305_Jahresbericht_2022_einseitig.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "85422",
+-          "title": "Anmeldung Untermiete",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/Anmeldung_Untermiete.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "75869",
+-          "title": "Hausordnung",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/Hausordnung.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "4784899",
+-          "title": "Jahresbericht 2021",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/Jahresbericht-2021.pdf"
+-        },
+-        {
+-          "extension": "pdf",
+-          "mimeType": "application/pdf",
+-          "size": "78532",
+-          "title": "Statuten",
+-          "url": "https://admin.bgwiedikon.ch/assets/uploads/Statuten_2024.pdf"
+-        }
+-      ],
+-      "type": "documents"
+     }
+   ],
+   "intro": "In diesem Abschnitt finden Sie alles zur Vermietung von Wohnungen und anderen Objekten.",
